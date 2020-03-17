@@ -31,9 +31,13 @@ class ButtonCell: UICollectionViewCell {
         backgroundColor = .black
         
         roundView.translatesAutoresizingMaskIntoConstraints = false
+        roundView.layer.masksToBounds = true
+        roundView.layer.cornerRadius = 40
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.textColor = .white
+        titleLabel.textAlignment = .left
+        titleLabel.font = UIFont.systemFont(ofSize: 35.0)
     }
     
     override init(frame: CGRect) {
