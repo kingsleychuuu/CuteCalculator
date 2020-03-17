@@ -11,7 +11,6 @@
 		846EFEB224207A2E002FAC01 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846EFEB124207A2E002FAC01 /* CalculatorViewController.swift */; };
 		846EFEB724207A30002FAC01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 846EFEB624207A30002FAC01 /* Assets.xcassets */; };
 		846EFEBA24207A30002FAC01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846EFEB824207A30002FAC01 /* LaunchScreen.storyboard */; };
-		846EFEC224207E31002FAC01 /* DisplayHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846EFEC124207E31002FAC01 /* DisplayHeaderView.swift */; };
 		846EFEC424207E3E002FAC01 /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846EFEC324207E3E002FAC01 /* ButtonCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -22,7 +21,6 @@
 		846EFEB624207A30002FAC01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		846EFEB924207A30002FAC01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		846EFEBB24207A30002FAC01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		846EFEC124207E31002FAC01 /* DisplayHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayHeaderView.swift; sourceTree = "<group>"; };
 		846EFEC324207E3E002FAC01 /* ButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,7 +56,6 @@
 			children = (
 				846EFEAD24207A2E002FAC01 /* AppDelegate.swift */,
 				846EFEB124207A2E002FAC01 /* CalculatorViewController.swift */,
-				846EFEC124207E31002FAC01 /* DisplayHeaderView.swift */,
 				846EFEC324207E3E002FAC01 /* ButtonCell.swift */,
 				846EFEB624207A30002FAC01 /* Assets.xcassets */,
 				846EFEB824207A30002FAC01 /* LaunchScreen.storyboard */,
@@ -139,7 +136,6 @@
 			files = (
 				846EFEB224207A2E002FAC01 /* CalculatorViewController.swift in Sources */,
 				846EFEAE24207A2E002FAC01 /* AppDelegate.swift in Sources */,
-				846EFEC224207E31002FAC01 /* DisplayHeaderView.swift in Sources */,
 				846EFEC424207E3E002FAC01 /* ButtonCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

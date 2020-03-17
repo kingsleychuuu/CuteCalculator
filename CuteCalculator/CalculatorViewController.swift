@@ -8,37 +8,46 @@
 
 import UIKit
 
-class CalculatorViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class CalculatorViewController: UIViewController {
     
     let displayHeaderViewID = "displayHeaderViewId"
     let buttonCellID = "buttonCellID"
     let buttonFunctions = ["AC", "+/-", "%", "÷", "7", "8", "9", "×", "4", "5", "6", "-", "1", "2", "3", "+", "0", ".", "="]
-
-    fileprivate func registerCells() {
-        // Do any additional setup after loading the view.
-        collectionView.register(DisplayHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: displayHeaderViewID)
-        collectionView.register(ButtonCell.self, forCellWithReuseIdentifier: buttonCellID)
-    }
+    var headerTitle = ""
+    var collectionView: UICollectionView!
     
-    fileprivate func setupView() {
-        view.backgroundColor = .black
+    fileprivate func setupCollectionView() {
+        
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.backgroundColor = .black
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.register(ButtonCell.self, forCellWithReuseIdentifier: buttonCellID)
+        
+        view.addSubview(collectionView)
+        collectionView.heightAnchor.constraint(equalToConstant: 400).isActive = true
+        collectionView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        collectionView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        registerCells()
-        setupView()
+        setupCollectionView()
     }
-    
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+}
+
+extension CalculatorViewController: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 19
     }
-
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    
+    internal func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: buttonCellID, for: indexPath) as! ButtonCell
         cell.titleLabel.text = buttonFunctions[indexPath.row]
         if indexPath.row % 4 == 3 || indexPath.row == 18 {
@@ -52,6 +61,14 @@ class CalculatorViewController: UICollectionViewController, UICollectionViewDele
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! ButtonCell
+        headerTitle = cell.titleLabel.text ?? ""
+        collectionView.reloadData()
+    }
+}
+
+extension CalculatorViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = UIScreen.main.bounds.width
         if indexPath.row == 16 {
@@ -62,17 +79,6 @@ class CalculatorViewController: UICollectionViewController, UICollectionViewDele
         
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        let width = UIScreen.main.bounds.width
-        let height = UIScreen.main.bounds.height
-        return CGSize(width: width, height: height - width * 1.25)
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: displayHeaderViewID, for: indexPath)
-        return header
-    }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
@@ -81,4 +87,3 @@ class CalculatorViewController: UICollectionViewController, UICollectionViewDele
         return 0
     }
 }
-

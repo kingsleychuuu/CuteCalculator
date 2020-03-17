@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
-        let viewController = CalculatorViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        let viewController = CalculatorViewController()
         window?.rootViewController = viewController
         
         return true

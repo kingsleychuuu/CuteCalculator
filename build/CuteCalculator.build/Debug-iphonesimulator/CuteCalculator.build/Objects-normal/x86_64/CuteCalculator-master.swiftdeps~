@@ -1,8 +1,7 @@
 version: "Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
 options: "63d85a19a8ab3529447777eca59cadfe"
-build_time: [1584418556, 840225000]
+build_time: [1584480319, 827669000]
 inputs:
-  "/Users/admin/Desktop/CuteCalculator/CuteCalculator/CalculatorViewController.swift": !dirty [1584418556, 651314051]
-  "/Users/admin/Desktop/CuteCalculator/CuteCalculator/AppDelegate.swift": !dirty [1584416434, 472629182]
-  "/Users/admin/Desktop/CuteCalculator/CuteCalculator/DisplayHeaderView.swift": !dirty [1584418556, 633828671]
-  "/Users/admin/Desktop/CuteCalculator/CuteCalculator/ButtonCell.swift": !dirty [1584418556, 619767341]
+  "/Users/admin/Desktop/CuteCalculator/CuteCalculator/CalculatorViewController.swift": [1584480319, 704693372]
+  "/Users/admin/Desktop/CuteCalculator/CuteCalculator/AppDelegate.swift": [1584479865, 214810913]
+  "/Users/admin/Desktop/CuteCalculator/CuteCalculator/ButtonCell.swift": [1584419658, 627271676]
