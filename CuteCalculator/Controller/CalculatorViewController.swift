@@ -43,7 +43,7 @@ class CalculatorViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.backgroundColor = .black
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.register(ButtonCell.self, forCellWithReuseIdentifier: buttonCellID)
+        collectionView.register(CalculatorButtonCell.self, forCellWithReuseIdentifier: buttonCellID)
         
         view.addSubview(collectionView)
         collectionView.topAnchor.constraint(equalTo: displayView.bottomAnchor).isActive = true
@@ -69,7 +69,7 @@ extension CalculatorViewController: UICollectionViewDataSource {
     }
     
     internal func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: buttonCellID, for: indexPath) as! ButtonCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: buttonCellID, for: indexPath) as! CalculatorButtonCell
         if indexPath.row % 4 == 3 || indexPath.row == 18 {
             cell.roundView.backgroundColor = .orange
         } else if indexPath.row < 3 {
@@ -88,7 +88,7 @@ extension CalculatorViewController: UICollectionViewDataSource {
         } else if indexPath.row == 18 {
             displayLabel.text = "ur cute"
         } else {
-            let cell = collectionView.cellForItem(at: indexPath) as! ButtonCell
+            let cell = collectionView.cellForItem(at: indexPath) as! CalculatorButtonCell
             displayLabel.text! += cell.titleLabel.text ?? ""
         }
     }

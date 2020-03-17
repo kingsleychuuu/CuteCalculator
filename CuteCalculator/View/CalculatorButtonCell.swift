@@ -1,5 +1,5 @@
 //
-//  ButtonCell.swift
+//  CalculatorButtonCell.swift
 //  CuteCalculator
 //
 //  Created by admin on 3/16/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ButtonCell: UICollectionViewCell {
+class CalculatorButtonCell: UICollectionViewCell {
     
     let titleLabel = UILabel()
     
