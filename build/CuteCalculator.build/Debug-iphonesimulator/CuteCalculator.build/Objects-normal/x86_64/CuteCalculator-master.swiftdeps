@@ -1,0 +1,7 @@
+version: "Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
+options: "63d85a19a8ab3529447777eca59cadfe"
+build_time: [1584415412, 574190000]
+inputs:
+  "/Users/admin/Desktop/CuteCalculator/CuteCalculator/ViewController.swift": [1584415406, 914031723]
+  "/Users/admin/Desktop/CuteCalculator/CuteCalculator/AppDelegate.swift": [1584415406, 896510328]
+  "/Users/admin/Desktop/CuteCalculator/CuteCalculator/SceneDelegate.swift": [1584415406, 910821017]
